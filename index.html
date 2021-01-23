@@ -1,67 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logo Assignment</title>
-    <link rel="stylesheet" href="./styles.css" />
-    <style type="text/css">
-      .animate {
-        -webkit-animation-name: cssAnimation;
-        -webkit-animation-duration: 4s;
-        -webkit-animation-iteration-count: 1;
-        -webkit-animation-timing-function: ease-in;
-        -webkit-animation-fill-mode: backwards;
-      }
-      @-webkit-keyframes cssAnimation {
-        from {
-          -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(100px);
-        }
-        to {
-          -webkit-transform: rotate(0deg) scale(2) skew(0deg) translate(100px);
-        }
-      }
-    </style>
-    <script>
-      function toggleImg() {
-        debugger;
-        document.getElementById("imgA").className = "animate";
-        let x = document.getElementById("imgA");
-        x.style.display = "none";
-        let y = document.getElementById("imgB");
-        y.style.display = "block";
-        let txt = document.getElementById("txtChange");
-        txt.style.display = "none";
-        document.getElementById("changeTxt").style.display = "block";
-      }
-    </script>
-  </head>
-  <body>
-    <div class="centeredImg">
-      <div class="txtClass" id="changeTxt" style="display: none">Welcome</div>
-      <div class="radiusLayer" id="imgA">
-        <div class="imgLayer" onclick="toggleImg();">
-          <img
-            src="./assets/FORT-assessment-logo.svg"
-            alt="_logo"
-            srcset=""
-            height="200px"
-            width="200px"
-          />
-        </div>
-      </div>
-      <div class="img2layer" id="imgB" style="display: none">
-        <div class="baseLayer">
-          <img
-            src="./assets/FORT-assessment-robo.png"
-            alt="_logo"
-            srcset=""
-            height="250px"
-            width="250px"
-          />
-        </div>
-      </div>
-      <div class="txtClass" id="txtChange">Click above</div>
-    </div>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Works when you downlode or clone the repo in your local machine -->
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="./styles.css" />
+
+	<script>
+		$(function () {
+        $(".logo-layer").click(function () {
+          $(".logo-layer")
+            .fadeTo("slow", 0.1, function () {
+              $(".logo-image").css(
+                "background-image",
+                "url(./assets/FORT-assessment-robo.png)"
+              );
+              $(".logo-layer").css("background", "transparent");
+            })
+            .fadeTo("slow", 1);
+
+          $("#welcome").fadeIn(1500, function () {
+            $(this).show();
+          });
+
+          $("#clickAbove").fadeOut(1500, function () {
+            $(this).hide();
+          });
+        });
+
+        $(".logo-wrap").click(function () {
+          $(".logo-wrap")
+            .fadeTo(1500, 0.1, function () {
+              $(this).css({ border: "2px dashed blue" });
+            })
+            .fadeTo(1500, 1.2);
+        });
+      });
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div id="welcome" style="display: none">Welcome</div>
+		<div class="logo-wrap">
+			<div class="logo-layer" onclick="function()">
+				<div class="logo-image"></div>
+			</div>
+		</div>
+		<div id="clickAbove">Click above</div>
+	</div>
+</body>
+
 </html>
