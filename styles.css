@@ -1,0 +1,54 @@
+.centeredImg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radiusLayer {
+  border-radius: 50%;
+  background: transparent;
+  padding: 0.75em;
+  border: 2px solid blue;
+}
+
+.radiusLayer .imgLayer {
+  border-radius: 50%;
+  background-color: blue;
+  padding: 1.5em;
+  cursor: pointer;
+}
+
+.centeredImg .radiusLayer .imgLayer img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  /* transform: scale(-1); */
+}
+
+/* .centeredImg .radiusLayer:hover {
+  transform: scale(-1);
+} */
+
+.img2layer {
+  border-radius: 50%;
+  background: transparent;
+  padding: 0.75em;
+}
+
+.img2layer .baseLayer {
+  border-radius: 50%;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  border: 2px dashed blue;
+}
+
+.centeredImg .img2layer .baseLayer img {
+  border-radius: 50%;
+}
+
+.txtClass {
+  margin: 1em;
+  text-align: center;
+}
